@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>RohdeSchwarz.Iot.Middleware.IotClient</RootNamespace>
+    <PackageId>RohdeSchwarz.Iot.Middleware.IotClient</PackageId>
+    <Version>0.1.1</Version>
+    <Authors>Frederic Schütze, Rohde &amp; Schwarz GmbH &amp; Co. KG, Rohde &amp; Schwarz International GmbH</Authors>
+    <Company>Rohde &amp; Schwarz GmbH &amp; Co. KG</Company>
+    <Product>RohdeSchwarz.Iot.Middleware.IotClient</Product>
+    <Description>Rohde &amp; Schwarz IoT based Remote Control Client</Description>
+    <Copyright>Copyright © 2020-present Rohde &amp; Schwarz GmbH &amp; Co. KG. All rights reserved.</Copyright>
+    <PackageIcon>Logo.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Rohde-Schwarz/azure-c2irc</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Devices" Version="1.22.0" />
+    <PackageReference Condition=" '$(Configuration)' == 'Release' " Include="RohdeSchwarz.Iot.Middleware.Model" Version="0.1.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Condition=" '$(Configuration)' == 'Debug' " Include="..\Middleware.Model\Middleware.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
