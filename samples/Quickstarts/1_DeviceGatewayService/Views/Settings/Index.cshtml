@@ -1,0 +1,68 @@
+﻿@model Settings
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h1>Settings</h1>
+<small>Stored at @DeviceGatewayService.Utils.Constants.ApplicationDataPath</small>
+<form asp-action="Index">
+
+    <h2>IoT-Hub Connection</h2>
+    <div class="form-group">
+        <label>Hub Address</label>
+        <input asp-for="Hub.Address" type="text" class="form-control" placeholder="Hub address" />
+    </div>
+    <div class="form-group">
+        <label>Device ID</label>
+        <input asp-for="Hub.DeviceId" type="text" class="form-control" placeholder="Device id" />
+    </div>
+    <div class="form-group">
+        <label>Shared Key</label>
+        <input asp-for="Hub.SharedAccessKey" type="text" class="form-control" placeholder="Shared key" />
+    </div>
+
+    <h2>Proxy</h2>
+
+    <div class="form-group form-check">
+        <input asp-for="Proxy.Enabled" type="checkbox" class="form-check-input" id="proxyCheck" onclick="update()" />
+        <label>Enabled</label>
+    </div>
+
+    <div id="proxySettings">
+        <div class="form-group">
+            <label>Address</label>
+            <input asp-for="Proxy.Address" type="url" class="form-control" placeholder="Proxy address" />
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="bypassCheck" />
+            <label asp-for="Proxy.BypassOnLocal" for="bypassCheck">Bypass on local</label>
+        </div>
+        <div class="form-group form-check">
+            <input asp-for="Proxy.Credentials.Enabled" type="checkbox" class="form-check-input" id="authCheck" onclick="update()" />
+            <label>Use authetication proxy</label>
+        </div>
+        <div id="proxyAuthSettings">
+            <div class="form-group">
+                <label>User</label>
+                <input asp-for="Proxy.Credentials.User" type="text" class="form-control" aria-describedby="userNote" placeholder="Username" />
+                <small id="userNote" class="form-text text-muted">Leave empty for proxy without authentication.</small>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Proxy.Credentials.Password" type="password" class="form-control" placeholder="Password" />
+            </div>
+        </div>
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<script>
+    update();
+    function update() {
+        document.getElementById('proxySettings').hidden = !document.getElementById('proxyCheck').checked;
+        document.getElementById('proxyAuthSettings').hidden = !document.getElementById('authCheck').checked;
+    }
+</script>
+

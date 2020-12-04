@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Visa by @ViewData["ManufacturerName"], Version @ViewData["ImplementationVersion"] <br>
+    running on @ViewData["OsName"]</p>
+    <p>Connection status: @ViewData["ConnectionStatus"]</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Supported Commands</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["SupportedCommands"] as IEnumerable<string>)
+        {
+            <tr>
+                <td>@item</td>
+            </tr>
+        }
+    </tbody>
+</table>
