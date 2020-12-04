@@ -19,6 +19,11 @@ dotnet restore
 dotnet build -c Release
 ```
 
+## Examples
+The solution also contains examples of how to use the libraries. More information about the projects can be found in the corresponding README in the project folder.
+
+- [DeviceGatewayService](samples/Quickstarts/1_DeviceGatewayService/README.md): Service with graphical web interface to configure the gateway.
+
 ## License
 
 The all code in this repository is licensed under the GPL-3.0 license. For more information see LICENSE.
