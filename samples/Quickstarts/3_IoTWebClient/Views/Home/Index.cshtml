@@ -1,0 +1,23 @@
+﻿@model IoTWebClient.Models.SendCommandFormModel
+@{
+    ViewData["Title"] = "Remote";
+}
+
+<h1>Remote</h1>
+
+<form asp-action="Index">
+    <label asp-for="Connection"></label>
+    <div class="input-group mb-3">
+        <input asp-for="Connection" class="form-control form-control-lg" placeholder="type in connection..." />
+    </div>
+    <label asp-for="Command"></label>
+    <div class="input-group mb-3">
+        <input asp-for="Command" class="form-control form-control-lg" placeholder="type in command..." />
+
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+    </div>
+</form>
+
+<p>@ViewData["Answer"]</p>

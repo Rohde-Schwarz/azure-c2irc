@@ -23,6 +23,8 @@ dotnet build -c Release
 The solution also contains examples of how to use the libraries. More information about the projects can be found in the corresponding README in the project folder.
 
 - [DeviceGatewayService](samples/Quickstarts/1_DeviceGatewayService/README.md): Service with graphical web interface to configure the gateway.
+- [IotCommandLineClient](samples/Quickstarts/2_IotCommandLineClient/README.md): Remote control client example to execute an `*IDN?` request.
+- [IotWebClient](samples/Quickstarts/3_IoTWebClient/README.md): Remote control web client to execute different commands to different instruments.
 
 ## License
 
