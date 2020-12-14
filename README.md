@@ -1,4 +1,5 @@
-# Azure C2IRC
+# Azure Cloud to Instrument Remote Control
+This repository provides the middleware components for the architecture described in application note [Cloud to Instrument Remote Control - A simple concept with Azure Iot](https://www.rohde-schwarz.com/appnote/GFM319).
 
 ## Libraries
 
