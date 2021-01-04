@@ -1,4 +1,4 @@
-FROM fschuetze/aspnet-rsvisa:3.1-buster-slim AS base
+FROM rohdeschwarz/aspnet-rsvisa:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
