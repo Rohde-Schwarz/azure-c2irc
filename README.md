@@ -29,6 +29,6 @@ The solution also contains examples of how to use the libraries. More informatio
 
 ## License
 
-The all code in this repository is licensed under the GPL-3.0 license. For more information see LICENSE.
+All code in this repository is licensed under the GPL-3.0 license. For more information see LICENSE.
 
 Copyright © 2020-present Rohde &amp; Schwarz GmbH &amp; Co. KG. All rights reserved.
